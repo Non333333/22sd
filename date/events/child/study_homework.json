@@ -1,0 +1,73 @@
+{
+  "id": "study_homework",
+  "phase": "child",
+  "category": "learn",
+  "minAge": 6,
+  "maxAge": 15,
+  "weight": 7,
+  "title": "宿題が分からない",
+  "prompt": "机の前で{name}が止まっている。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "sad",
+      "text": [
+        "ここ、わかんない。",
+        "もう無理。わかんない。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "考え方だけ教える",
+      "hint": "答えは本人に出させる。",
+      "effects": {
+        "independence": 4,
+        "school": 4,
+        "selfEsteem": 2
+      },
+      "record": "宿題は考え方だけ教え、答えは{name}自身に出させた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "あ、わかったかも！"
+        }
+      ]
+    },
+    {
+      "label": "答えを全部教える",
+      "hint": "早く終わらせる。",
+      "effects": {
+        "school": 2,
+        "dependence": 4,
+        "independence": -2
+      },
+      "record": "宿題の答えをかなり手伝った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "早く終わった。"
+        }
+      ]
+    },
+    {
+      "label": "分からないことを叱る",
+      "hint": "厳しく接する。",
+      "effects": {
+        "rebellion": 4,
+        "selfEsteem": -5,
+        "attachment": -4
+      },
+      "record": "宿題が分からないことを強く叱った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": "……もういい。"
+        }
+      ]
+    }
+  ]
+}

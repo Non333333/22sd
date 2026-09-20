@@ -1,0 +1,71 @@
+{
+  "id": "future_talk",
+  "phase": "child",
+  "category": "learn",
+  "minAge": 17,
+  "maxAge": 21,
+  "weight": 7,
+  "title": "将来の話",
+  "prompt": "{name}が進路について相談してきた。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "neutral",
+      "text": [
+        "これからどうしようかな。",
+        "進学するか、働くか……。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "本人の希望を聞く",
+      "hint": "自分で決めさせる。",
+      "effects": {
+        "independence": 6,
+        "selfEsteem": 4,
+        "attachment": 2
+      },
+      "record": "進路について、まず{name}本人の希望を聞いた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "ちゃんと考えてみる。"
+        }
+      ]
+    },
+    {
+      "label": "親が安定した道を決める",
+      "hint": "失敗しにくい道を示す。",
+      "effects": {
+        "dependence": 7,
+        "independence": -5
+      },
+      "record": "進路は養育者が強く方向を決めた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": "……それがいいなら。"
+        }
+      ]
+    },
+    {
+      "label": "好きにすればと言う",
+      "hint": "完全に本人へ任せる。",
+      "effects": {
+        "independence": 4,
+        "attachment": -2
+      },
+      "record": "進路は{name}の好きにすればいいと伝えた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "……うん。"
+        }
+      ]
+    }
+  ]
+}

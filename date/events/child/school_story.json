@@ -1,0 +1,58 @@
+{
+  "id": "school_story",
+  "phase": "child",
+  "category": "talk",
+  "minAge": 6,
+  "maxAge": 12,
+  "weight": 7,
+  "title": "学校であったこと",
+  "prompt": "帰宅した{name}が、珍しく自分から話し始めた。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "happy",
+      "text": [
+        "今日ね、学校でさ！",
+        "聞いて。今日ちょっと面白いことあった。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "最後まで聞く",
+      "hint": "途中で口を挟まない。",
+      "effects": {
+        "attachment": 5,
+        "sociability": 2,
+        "selfEsteem": 2
+      },
+      "record": "学校であったことを最後まで聞いた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": [
+            "それでね、それでね！",
+            "やっぱ話すとおもしろい。"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "宿題を先にさせる",
+      "hint": "話は後にする。",
+      "effects": {
+        "school": 3,
+        "attachment": -2
+      },
+      "record": "学校の話より先に宿題をさせた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": "……わかった。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "fever",
+  "phase": "child",
+  "category": "medical",
+  "minAge": 1,
+  "maxAge": 14,
+  "weight": 5,
+  "title": "熱がある",
+  "prompt": "{name}の顔が赤く、いつもより元気がない。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "sick",
+      "text": [
+        "なんかだるい……。",
+        "あつい……。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "病院へ連れて行く",
+      "hint": "診察を受ける。",
+      "effects": {
+        "money": -2,
+        "health": 2,
+        "attachment": 2
+      },
+      "appearance": {
+        "expression": "sick",
+        "condition": "fever",
+        "duration": 2
+      },
+      "record": "発熱した{name}を病院へ連れて行った。",
+      "discover": "発熱",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sick",
+          "text": "早くおうち帰りたい……。"
+        }
+      ]
+    },
+    {
+      "label": "家で休ませる",
+      "hint": "水分をとって様子を見る。",
+      "effects": {
+        "health": 1
+      },
+      "appearance": {
+        "expression": "sick",
+        "condition": "fever",
+        "duration": 2
+      },
+      "record": "発熱した{name}を家で休ませた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sleepy",
+          "text": "……ねる。"
+        }
+      ]
+    }
+  ]
+}

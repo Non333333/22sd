@@ -1,0 +1,53 @@
+{
+  "id": "teen_hangout",
+  "phase": "child",
+  "category": "play",
+  "minAge": 12,
+  "maxAge": 17,
+  "weight": 5,
+  "title": "一緒に何かする？",
+  "prompt": "珍しく{name}が居間に長くいる。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "neutral",
+      "text": [
+        "なんか見る？",
+        "暇なら一緒にゲームする？"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "一緒に遊ぶ",
+      "hint": "同じ時間を過ごす。",
+      "effects": {
+        "attachment": 4,
+        "sociability": 1
+      },
+      "record": "{name}と一緒に遊んだ。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "まだやる？"
+        }
+      ]
+    },
+    {
+      "label": "忙しいと断る",
+      "hint": "自分の予定を優先する。",
+      "effects": {
+        "attachment": -2
+      },
+      "record": "誘われたが忙しく、断った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "そっか。じゃあいい。"
+        }
+      ]
+    }
+  ]
+}

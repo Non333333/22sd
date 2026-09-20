@@ -1,0 +1,71 @@
+{
+  "id": "friend_conflict",
+  "phase": "child",
+  "category": "talk",
+  "minAge": 8,
+  "maxAge": 15,
+  "weight": 5,
+  "title": "友達と喧嘩した",
+  "prompt": "{name}が珍しく沈んだ顔で帰ってきた。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "sad",
+      "text": [
+        "今日、友達と喧嘩した。",
+        "……もう話したくない。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "何があったか聞く",
+      "hint": "どちらが悪いか決めつけない。",
+      "effects": {
+        "attachment": 4,
+        "sociability": 2,
+        "kindness": 1
+      },
+      "record": "友達と喧嘩した{name}の話を聞いた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "……明日、もう一回話してみる。"
+        }
+      ]
+    },
+    {
+      "label": "相手が悪いと言う",
+      "hint": "味方であることを示す。",
+      "effects": {
+        "attachment": 3,
+        "rebellion": 1
+      },
+      "record": "友達との喧嘩で{name}の味方をした。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "やっぱそうだよね。"
+        }
+      ]
+    },
+    {
+      "label": "くだらないと言う",
+      "hint": "深く取り合わない。",
+      "effects": {
+        "attachment": -4,
+        "selfEsteem": -3
+      },
+      "record": "友達との喧嘩をくだらないと言った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": "……もういい。"
+        }
+      ]
+    }
+  ]
+}

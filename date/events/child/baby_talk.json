@@ -1,0 +1,61 @@
+{
+  "id": "baby_talk",
+  "phase": "child",
+  "category": "talk",
+  "minAge": 0,
+  "maxAge": 1,
+  "weight": 8,
+  "title": "顔を見つめている",
+  "prompt": "{name}がこちらをじっと見ている。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "neutral",
+      "text": [
+        "あー……。",
+        "うー。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "たくさん話しかける",
+      "hint": "声を聞かせる。",
+      "effects": {
+        "attachment": 5,
+        "kindness": 1
+      },
+      "record": "{name}にたくさん話しかけた。",
+      "result": [
+        {
+          "speaker": "player",
+          "expression": "happy",
+          "text": [
+            "{name}、今日もかわいいね。",
+            "聞こえてる？"
+          ]
+        },
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "あー！"
+        }
+      ]
+    },
+    {
+      "label": "そっと見守る",
+      "hint": "静かにそばにいる。",
+      "effects": {
+        "attachment": 2
+      },
+      "record": "{name}をそっと見守った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sleepy",
+          "text": "……ふぁ。"
+        }
+      ]
+    }
+  ]
+}

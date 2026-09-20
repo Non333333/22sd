@@ -1,0 +1,74 @@
+{
+  "id": "toddler_drawing",
+  "phase": "child",
+  "category": "play",
+  "minAge": 2,
+  "maxAge": 5,
+  "weight": 7,
+  "title": "謎の絵",
+  "prompt": "{name}が紙を持って走ってきた。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "happy",
+      "text": [
+        "みて！かいた！",
+        "これ、{player}！"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "すごいと褒める",
+      "hint": "嬉しそうに受け取る。",
+      "effects": {
+        "selfEsteem": 5,
+        "attachment": 3,
+        "kindness": 1
+      },
+      "record": "{name}が描いた絵をたくさん褒めた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": [
+            "えへへ！もういっこかく！",
+            "ほんと？ じょうず？"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "何を描いたのか聞く",
+      "hint": "会話を広げる。",
+      "effects": {
+        "sociability": 3,
+        "attachment": 2
+      },
+      "record": "{name}の絵について話を聞いた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "これはね、ここがおうち！"
+        }
+      ]
+    },
+    {
+      "label": "後で見ると言う",
+      "hint": "今は別のことを優先する。",
+      "effects": {
+        "attachment": -2,
+        "selfEsteem": -1
+      },
+      "record": "絵は後で見ると伝えた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": "……あとで、ぜったい見てね。"
+        }
+      ]
+    }
+  ]
+}

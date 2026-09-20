@@ -1,0 +1,73 @@
+{
+  "id": "late_return",
+  "phase": "child",
+  "category": "outside",
+  "minAge": 15,
+  "maxAge": 18,
+  "weight": 5,
+  "title": "帰宅が遅い",
+  "prompt": "予定よりかなり遅れて{name}が帰ってきた。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "neutral",
+      "text": [
+        "ただいま。",
+        "……遅くなった。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "理由を聞く",
+      "hint": "まず話を聞く。",
+      "effects": {
+        "attachment": 2,
+        "rebellion": -1
+      },
+      "record": "遅く帰った理由を落ち着いて聞いた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "友達と話してたら遅くなった。"
+        }
+      ]
+    },
+    {
+      "label": "怒鳴る",
+      "hint": "強く叱る。",
+      "effects": {
+        "rebellion": 8,
+        "delinquency": 5,
+        "attachment": -6,
+        "homeStress": 6
+      },
+      "record": "遅い帰宅を怒鳴って叱った。",
+      "discover": "家庭内衝突",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "angry",
+          "text": "うるさい！ 分かってる！"
+        }
+      ]
+    },
+    {
+      "label": "何も言わない",
+      "hint": "本人に任せる。",
+      "effects": {
+        "independence": 2,
+        "attachment": -1
+      },
+      "record": "遅い帰宅について何も言わなかった。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "……何も言わないんだ。"
+        }
+      ]
+    }
+  ]
+}

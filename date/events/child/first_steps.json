@@ -1,0 +1,59 @@
+{
+  "id": "first_steps",
+  "phase": "child",
+  "category": "play",
+  "minAge": 0,
+  "maxAge": 2,
+  "weight": 6,
+  "title": "立とうとしている",
+  "prompt": "{name}が家具につかまり、こちらを見ている。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "happy",
+      "text": [
+        "あっ！",
+        "うー！"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "少し離れて呼ぶ",
+      "hint": "自分で一歩出るのを待つ。",
+      "effects": {
+        "independence": 3,
+        "attachment": 2
+      },
+      "record": "{name}が自分で一歩踏み出すのを見守った。",
+      "result": [
+        {
+          "speaker": "player",
+          "expression": "happy",
+          "text": "おいで。ゆっくりでいいよ。"
+        },
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "あー！"
+        }
+      ]
+    },
+    {
+      "label": "すぐ抱き上げる",
+      "hint": "転ぶ前に助ける。",
+      "effects": {
+        "dependence": 2,
+        "attachment": 3
+      },
+      "record": "転ぶ前に{name}を抱き上げた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "きゃっ！"
+        }
+      ]
+    }
+  ]
+}

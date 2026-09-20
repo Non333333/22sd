@@ -1,0 +1,76 @@
+{
+  "id": "teen_argument",
+  "phase": "child",
+  "category": "talk",
+  "minAge": 13,
+  "maxAge": 17,
+  "weight": 6,
+  "title": "返事が刺々しい",
+  "prompt": "話しかけても、今日は明らかに機嫌が悪い。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "angry",
+      "text": [
+        "……なに。",
+        "今、話しかけないで。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "今日はそっとしておく",
+      "hint": "距離を置く。",
+      "effects": {
+        "independence": 3,
+        "attachment": 1,
+        "rebellion": -1
+      },
+      "record": "機嫌の悪い{name}を無理に問い詰めず、そっとしておいた。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "……ありがと。"
+        }
+      ]
+    },
+    {
+      "label": "その態度を叱る",
+      "hint": "礼儀を求める。",
+      "effects": {
+        "rebellion": 6,
+        "attachment": -4,
+        "homeStress": 5
+      },
+      "record": "反抗的な態度を強く叱った。",
+      "discover": "強い反抗期",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "angry",
+          "text": "もういいって！"
+        }
+      ]
+    },
+    {
+      "label": "何があったか聞く",
+      "hint": "話すまで待つ。",
+      "effects": {
+        "attachment": 3,
+        "sociability": 1
+      },
+      "record": "何があったのか聞き、話すまで待った。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "sad",
+          "text": [
+            "……学校でちょっとあって。",
+            "別に大したことじゃないけど。"
+          ]
+        }
+      ]
+    }
+  ]
+}

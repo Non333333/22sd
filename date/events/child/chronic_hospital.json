@@ -1,0 +1,66 @@
+{
+  "id": "chronic_hospital",
+  "phase": "child",
+  "category": "medical",
+  "minAge": 0,
+  "maxAge": 21,
+  "weight": 12,
+  "conditions": [
+    {
+      "source": "flags",
+      "key": "chronic",
+      "eq": true
+    }
+  ],
+  "title": "定期通院",
+  "prompt": "今日は定期的な診察の日。",
+  "intro": [
+    {
+      "speaker": "child",
+      "expression": "sick",
+      "text": [
+        "今日、病院だよね。",
+        "また検査ある？"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "予定どおり受診する",
+      "hint": "いつもの診察へ行く。",
+      "effects": {
+        "money": -2,
+        "health": 2,
+        "attachment": 1
+      },
+      "record": "持病の定期通院へ行った。",
+      "result": [
+        {
+          "speaker": "player",
+          "expression": "neutral",
+          "text": "終わったら帰ろう。"
+        },
+        {
+          "speaker": "child",
+          "expression": "happy",
+          "text": "うん。"
+        }
+      ]
+    },
+    {
+      "label": "今日は休ませる",
+      "hint": "受診を延期する。",
+      "effects": {
+        "health": -2
+      },
+      "record": "この日の定期通院を延期した。",
+      "result": [
+        {
+          "speaker": "child",
+          "expression": "neutral",
+          "text": "今日は行かないんだ。"
+        }
+      ]
+    }
+  ]
+}
