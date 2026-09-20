@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171817">
+  <title>22年育成記録</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div><div class="tiny">LIFE SIMULATION</div><h1>22年育成記録</h1></div>
+    <div class="header-buttons">
+      <button id="recordsBtn" class="ui-btn">記録</button>
+      <button id="saveBtn" class="ui-btn">セーブ</button>
+      <button id="settingsBtn" class="ui-btn">設定</button>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="scene-wrap">
+      <div id="scene" class="scene scene-day home-normal">
+        <div class="wall">
+          <div class="window"><div class="sky"></div><div class="window-v"></div><div class="window-h"></div></div>
+          <div class="curtain left"></div><div class="curtain right"></div>
+          <div class="picture-frame"></div><div class="crack crack1"></div><div class="crack crack2"></div>
+        </div>
+        <div class="floor"></div><div class="rug"></div><div class="sofa"></div><div class="table"></div><div class="plant"></div>
+        <div id="mess" class="mess hidden"><span></span><span></span><span></span></div>
+
+        <div id="fatherSprite" class="person adult father hidden" aria-label="父">
+          <div class="shadow"></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+          <div class="head"><div class="hair"></div><i class="eye e1"></i><i class="eye e2"></i><i class="brow b1"></i><i class="brow b2"></i><i class="mouth"></i></div>
+        </div>
+        <div id="motherSprite" class="person adult mother hidden" aria-label="母">
+          <div class="shadow"></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+          <div class="head"><div class="hair"></div><i class="eye e1"></i><i class="eye e2"></i><i class="brow b1"></i><i class="brow b2"></i><i class="mouth"></i></div>
+        </div>
+        <div id="childSprite" class="person child hidden" aria-label="子ども">
+          <div class="shadow"></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div>
+          <div class="head">
+            <div class="hair"></div><i class="eye e1"></i><i class="eye e2"></i><i class="brow b1"></i><i class="brow b2"></i><i class="mouth"></i>
+            <i class="tear t1"></i><i class="tear t2"></i><i class="bandage"></i><i class="bruise"></i>
+          </div>
+          <div class="cast"></div><div class="medical"></div>
+        </div>
+
+        <div id="speakerBubble" class="speech hidden">
+          <div id="speakerName" class="speaker-name"></div>
+          <div id="speakerText" class="speaker-text"></div>
+          <div class="speech-hint">タップで次へ</div>
+        </div>
+        <div id="sceneLabel" class="scene-label">まだ物語は始まっていない。</div>
+      </div>
+
+      <div class="statusbar">
+        <div><span>時期</span><b id="ageView">開始前</b></div>
+        <div><span>健康</span><b id="healthView">―</b></div>
+        <div><span>家</span><b id="homeView">普通</b></div>
+        <div><span>気分</span><b id="moodView">―</b></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div id="setupScreen">
+        <div class="tiny">NEW GAME</div><h2>この家族を育てる</h2>
+        <p class="desc">毎回、父・母・生まれる子は同じ家族です。操作する親だけを選び、子どもの名前を決めます。</p>
+        <div class="label">プレイヤー</div>
+        <div class="role-grid">
+          <button class="role selected" data-role="mother"><strong>母</strong><span>妊娠中は身体・生活の選択が中心</span></button>
+          <button class="role" data-role="father"><strong>父</strong><span>妊娠中は妻・家庭への関わりが中心</span></button>
+        </div>
+        <div class="label">子どもの名前</div>
+        <input id="nameInput" value="ひなた" maxlength="16" class="name-input">
+        <button id="startBtn" class="main-btn">妊娠期から始める</button>
+        <button id="loadBtn" class="sub-btn">セーブデータをロード</button>
+      </div>
+
+      <div id="playScreen" class="hidden">
+        <div class="panel-head">
+          <div><div id="phaseLabel" class="tiny">PREGNANCY</div><h2 id="actionTitle">今日、どうする？</h2></div>
+          <button id="ageUpBtn" class="ageup hidden">次の年齢へ →</button>
+        </div>
+        <p id="actionLead" class="desc"></p>
+        <div id="actionButtons" class="action-grid"></div>
+        <div class="mini-stats">
+          <div><span>優しさ</span><b id="kindnessStat">0</b></div>
+          <div><span>自立</span><b id="independenceStat">0</b></div>
+          <div><span>親子</span><b id="attachmentStat">0</b></div>
+          <div><span>反抗</span><b id="rebellionStat">0</b></div>
+        </div>
+        <div id="eventLog" class="last-event">まだ行動していません。</div>
+      </div>
+
+      <div id="endingScreen" class="hidden">
+        <div class="tiny">AGE 22</div><h2 id="endingTitle">22歳になりました</h2>
+        <div id="endingCards" class="ending-cards"></div>
+        <button id="diaryBtn" class="main-btn">22年間の日記を読む</button>
+        <button id="endingRecordsBtn" class="sub-btn">成長記録を全部見る</button>
+        <button id="restartBtn" class="ui-btn full">最初から</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modalBackdrop" class="modal-backdrop hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <div><div id="modalKicker" class="tiny"></div><h2 id="modalTitle"></h2></div>
+      <button id="closeModal" class="close">×</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+<script src="./js/audio.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
