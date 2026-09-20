@@ -1,0 +1,63 @@
+{
+  "id": "preg_checkup_echo",
+  "phase": "pregnancy",
+  "category": "checkup",
+  "minWeek": 10,
+  "maxWeek": 34,
+  "weight": 7,
+  "title": "健診の日",
+  "prompt": "今日は妊婦健診。エコーを見ることになった。",
+  "intro": [
+    {
+      "speaker": "partner",
+      "expression": "happy",
+      "text": [
+        "今日は写真もらえるかな。",
+        "ちゃんと育ってるかな。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "予定どおり健診へ行く",
+      "hint": "状態を確認する。",
+      "effects": {
+        "prenatalCare": 8,
+        "prenatalRisk": -2,
+        "money": -1
+      },
+      "record": "妊婦健診を受けた。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "happy",
+          "text": "ちゃんと動いてた。"
+        },
+        {
+          "speaker": "father",
+          "expression": "happy",
+          "text": [
+            "見せて。……これ頭？",
+            "わ、ほんとだ。小さい。"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "今日は見送る",
+      "hint": "別の日にする。",
+      "effects": {
+        "prenatalCare": -5,
+        "prenatalRisk": 2
+      },
+      "record": "この日の妊婦健診は見送った。",
+      "result": [
+        {
+          "speaker": "partner",
+          "expression": "neutral",
+          "text": "……次はちゃんと行こう。"
+        }
+      ]
+    }
+  ]
+}

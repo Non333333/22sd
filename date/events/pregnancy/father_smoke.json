@@ -1,0 +1,70 @@
+{
+  "id": "preg_father_smoke",
+  "phase": "pregnancy",
+  "category": "free",
+  "roles": [
+    "father"
+  ],
+  "minWeek": 10,
+  "maxWeek": 38,
+  "weight": 3,
+  "title": "食後の時間",
+  "prompt": "少しだけ一人の時間ができた。",
+  "intro": [
+    {
+      "speaker": "father",
+      "expression": "neutral",
+      "text": "さて、と。"
+    }
+  ],
+  "choices": [
+    {
+      "label": "部屋でタバコを吸う",
+      "hint": "いつも通り。",
+      "effects": {
+        "prenatalRisk": 5,
+        "cleanliness": -3,
+        "partnerTrust": -3
+      },
+      "record": "妊娠中の妻がいる部屋で喫煙した。",
+      "discover": "家庭内喫煙",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "angry",
+          "text": "……ここで吸うの？"
+        }
+      ]
+    },
+    {
+      "label": "外で吸う",
+      "hint": "家の中では吸わない。",
+      "effects": {
+        "prenatalRisk": 1
+      },
+      "record": "タバコは家の外で吸った。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "neutral",
+          "text": "外なら……まあ。"
+        }
+      ]
+    },
+    {
+      "label": "今日は吸わない",
+      "hint": "別のことをする。",
+      "effects": {
+        "family": 1
+      },
+      "record": "この日は喫煙しなかった。",
+      "result": [
+        {
+          "speaker": "father",
+          "expression": "happy",
+          "text": "今日はいいや。"
+        }
+      ]
+    }
+  ]
+}

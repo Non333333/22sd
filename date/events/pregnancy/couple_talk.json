@@ -1,0 +1,70 @@
+{
+  "id": "preg_couple_talk",
+  "phase": "pregnancy",
+  "category": "partner",
+  "minWeek": 14,
+  "maxWeek": 38,
+  "weight": 8,
+  "title": "夜、二人で話す",
+  "prompt": "子どもが生まれた後のことを話す。",
+  "intro": [
+    {
+      "speaker": "mother",
+      "expression": "neutral",
+      "text": [
+        "生まれたら、夜とかどうなるんだろ。",
+        "ちゃんと二人でやれるかな。"
+      ]
+    },
+    {
+      "speaker": "father",
+      "expression": "neutral",
+      "text": [
+        "たぶん大変だろうな。",
+        "俺もまだ全然想像つかない。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "一緒にやっていこうと言う",
+      "hint": "関係を安定させる。",
+      "effects": {
+        "partnerTrust": 6,
+        "family": 5,
+        "homeStress": -3
+      },
+      "record": "出産後も二人で育てていこうと話した。",
+      "result": [
+        {
+          "speaker": "partner",
+          "expression": "happy",
+          "text": [
+            "うん。そうしよう。",
+            "……それ聞けてちょっと安心した。"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "相手がやればいいと言う",
+      "hint": "負担を相手へ寄せる。",
+      "effects": {
+        "partnerTrust": -8,
+        "family": -5,
+        "homeStress": 6
+      },
+      "record": "育児は相手が中心でやればいいと伝えた。",
+      "result": [
+        {
+          "speaker": "partner",
+          "expression": "angry",
+          "text": [
+            "……本気で言ってる？",
+            "それ、今言う？"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "preg_nursery_prepare",
+  "phase": "pregnancy",
+  "category": "home",
+  "minWeek": 18,
+  "maxWeek": 38,
+  "weight": 6,
+  "title": "赤ちゃん用品",
+  "prompt": "部屋に置くものを少しずつ決める。",
+  "intro": [
+    {
+      "speaker": "mother",
+      "expression": "neutral",
+      "text": "ベビーベッド、ここに置けるかな。"
+    },
+    {
+      "speaker": "father",
+      "expression": "happy",
+      "text": "この机ずらせばいけそう。"
+    }
+  ],
+  "choices": [
+    {
+      "label": "必要なものを少しずつ買う",
+      "hint": "家計と準備のバランスを取る。",
+      "effects": {
+        "money": -4,
+        "cleanliness": 3,
+        "family": 4
+      },
+      "record": "赤ちゃん用品を少しずつ揃えた。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "happy",
+          "text": "なんか、急に実感出てきた。"
+        }
+      ]
+    },
+    {
+      "label": "まだ何も買わない",
+      "hint": "出費を抑える。",
+      "effects": {
+        "money": 2
+      },
+      "record": "赤ちゃん用品はまだ買わなかった。",
+      "result": [
+        {
+          "speaker": "father",
+          "expression": "neutral",
+          "text": "まあ、もう少し後でもいいか。"
+        }
+      ]
+    }
+  ]
+}

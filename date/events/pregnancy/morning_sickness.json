@@ -1,0 +1,70 @@
+{
+  "id": "preg_morning_sickness",
+  "phase": "pregnancy",
+  "category": "rest",
+  "roles": [
+    "mother"
+  ],
+  "minWeek": 8,
+  "maxWeek": 20,
+  "weight": 6,
+  "title": "朝から気持ち悪い",
+  "prompt": "少し横になれば落ち着くかもしれない。",
+  "intro": [
+    {
+      "speaker": "mother",
+      "expression": "sick",
+      "text": [
+        "……う、ちょっと気持ち悪い。",
+        "朝からだめだ……。"
+      ]
+    },
+    {
+      "speaker": "father",
+      "expression": "scared",
+      "text": [
+        "大丈夫？ 横になる？",
+        "水、持ってこようか？"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "横になって休む",
+      "hint": "無理をしない。",
+      "effects": {
+        "prenatalCare": 4,
+        "homeStress": -2
+      },
+      "record": "つわりが強く、横になって休んだ。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "sleepy",
+          "text": "少し寝たら楽になった。"
+        },
+        {
+          "speaker": "father",
+          "expression": "happy",
+          "text": "今日はゆっくりしとこう。"
+        }
+      ]
+    },
+    {
+      "label": "そのまま家事をする",
+      "hint": "家のことを優先する。",
+      "effects": {
+        "cleanliness": 4,
+        "prenatalRisk": 3
+      },
+      "record": "気分が悪かったが、そのまま家事を続けた。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "sick",
+          "text": "……やっぱり、ちょっときつい。"
+        }
+      ]
+    }
+  ]
+}

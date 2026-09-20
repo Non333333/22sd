@@ -1,0 +1,72 @@
+{
+  "id": "preg_mother_smoke",
+  "phase": "pregnancy",
+  "category": "free",
+  "roles": [
+    "mother"
+  ],
+  "minWeek": 10,
+  "maxWeek": 38,
+  "weight": 3,
+  "title": "一人の時間",
+  "prompt": "少し手持ち無沙汰になった。",
+  "intro": [
+    {
+      "speaker": "mother",
+      "expression": "neutral",
+      "text": "……どうしようかな。"
+    }
+  ],
+  "choices": [
+    {
+      "label": "タバコを吸う",
+      "hint": "いつものように過ごす。",
+      "effects": {
+        "prenatalRisk": 9,
+        "homeStress": -1
+      },
+      "record": "妊娠中に喫煙した。",
+      "discover": "妊娠中の喫煙",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "neutral",
+          "text": "……ふう。"
+        }
+      ]
+    },
+    {
+      "label": "お酒を飲む",
+      "hint": "少しだけ飲む。",
+      "effects": {
+        "prenatalRisk": 11,
+        "homeStress": -1
+      },
+      "record": "妊娠中に飲酒した。",
+      "discover": "妊娠中の飲酒",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "neutral",
+          "text": "今日は少しだけ。"
+        }
+      ]
+    },
+    {
+      "label": "温かい飲み物にする",
+      "hint": "ゆっくり休む。",
+      "effects": {
+        "prenatalCare": 2,
+        "homeStress": -2
+      },
+      "record": "温かい飲み物を飲んで休んだ。",
+      "result": [
+        {
+          "speaker": "mother",
+          "expression": "happy",
+          "text": "……落ち着く。"
+        }
+      ]
+    }
+  ]
+}

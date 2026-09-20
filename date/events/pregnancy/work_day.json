@@ -1,0 +1,55 @@
+{
+  "id": "preg_work_day",
+  "phase": "pregnancy",
+  "category": "work",
+  "minWeek": 8,
+  "maxWeek": 36,
+  "weight": 5,
+  "title": "今日は仕事の日",
+  "prompt": "家計も大切だが、無理のしすぎも気になる。",
+  "intro": [
+    {
+      "speaker": "player",
+      "expression": "neutral",
+      "text": [
+        "今日はどうしよう。",
+        "まだ動けるけど……。"
+      ]
+    }
+  ],
+  "choices": [
+    {
+      "label": "無理せず働く",
+      "hint": "ほどほどに仕事をする。",
+      "effects": {
+        "money": 4,
+        "homeStress": 1
+      },
+      "record": "無理をしすぎない範囲で働いた。",
+      "result": [
+        {
+          "speaker": "partner",
+          "expression": "happy",
+          "text": "おつかれ。今日はもう休もう。"
+        }
+      ]
+    },
+    {
+      "label": "かなり無理して働く",
+      "hint": "収入を優先する。",
+      "effects": {
+        "money": 8,
+        "prenatalRisk": 4,
+        "homeStress": 4
+      },
+      "record": "負担を感じながらも長く働いた。",
+      "result": [
+        {
+          "speaker": "partner",
+          "expression": "scared",
+          "text": "顔色悪くない？"
+        }
+      ]
+    }
+  ]
+}
